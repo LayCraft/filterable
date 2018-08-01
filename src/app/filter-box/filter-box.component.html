@@ -1,2 +1,10 @@
-<input type="text" [(ngModel)]="input">
-Input:{{input}}
+Label<input #labelInput type="text" (input)="filterLabel(labelInput.value)">
+Value<input #valueInput type="text" (input)="filterValue(valueInput.value)">
+
+<ul>
+    <li *ngFor="let x of list">{{x|json}}</li>
+</ul>
+<!-- {{list|json}} -->
+<p>{{label}} {{value}}</p>
+<p>FilterList{{filterList|json}}</p>
+<p>FinalFilterList{{finalFilterList|json}}</p>
